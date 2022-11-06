@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+var text = "1/ Domo arigato!";
+var text2 = "1.2/ ya all";
+console.log("2/ Before defining functions");
+
+function useless(ninjaCallback) {
+  console.log("3/ In useless function");
+  return ninjaCallback();
+}
+function getText() {
+  console.log("5/ In getText function");
+  return text;
+}
+console.log("6/ Before making all the calls");
+
+console.log(useless(getText));
+    
+</script>
+</head>
+</html>

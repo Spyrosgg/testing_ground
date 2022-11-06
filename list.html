@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+    
+const Node = (value) => {
+  return {
+    value: value,
+    next: null,
+
+  };
+};
+
+const LinkedListFactory = () => {
+
+    function addHead(value){
+        let newNode = Node(value);
+        if (!head){
+            this.head=newNode;
+            this.tail=head;
+        };
+    };
+
+  return {
+    head: null,
+    tail: null,
+    length: 0,
+    addHead
+    // size:()=>,
+    // head:()=>,
+    // tail:()=>,
+    // at:(index)=>,
+    // pop:()=>,
+    // find:(value)=>,
+    // toString:()=>
+  };
+};
+
+// initiation
+const myLL = LinkedListFactory();
+myLL.addHead('value1');
+
+
+
+</script>
+</head>
+</html>

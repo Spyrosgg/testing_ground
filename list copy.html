@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      class Node {
+        constructor(val) {
+          this.val = val;
+          this.next = null;
+          this.prev = null;
+        }
+      }
+      console.log(Node)
+      
+      class linkedList {
+        constructor() {
+          this.head = null;
+          this.tail = null;
+          this.length = 0;
+        }
+        addHead(val) {
+          let newNode = new Node(val);
+          
+          if (!this.head) {
+            this.head = newNode;
+            this.tail = this.head;
+          }
+          
+          this.head.prev = newNode;
+          newNode.next = this.head;
+          this.head = newNode;
+          
+          this.length++;
+          return this;
+        }
+        addTail(val) {
+          let newNode = new Node(val);
+          
+          if (!this.head) {
+            this.head = newNode;
+            this.tail = newNode;
+          }
+          
+          this.tail.next = newNode;
+          newNode.prev = this.tail;
+          this.tail = newNode;
+          
+          this.length++;
+          return this;
+        }
+      }
+      
+      // initiation
+      const myLL = new linkedList();
+      myLL.addHead("value1");
+      myLL.addTail("value2")
+      myLL.addTail("value3")
+      
+      
+      console.log(linkedList)
+      // console.log(myLL.head.next.next.val);
+    </script>
+  </head>
+</html>
