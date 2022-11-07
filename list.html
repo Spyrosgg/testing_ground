@@ -1,47 +1,61 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<script>
-    
-const Node = (value) => {
-  return {
-    value: value,
-    next: null,
+  <script>
 
-  };
-};
-
-const LinkedListFactory = () => {
-
-    function addHead(value){
-        let newNode = Node(value);
-        if (!head){
-            this.head=newNode;
-            this.tail=head;
-        };
+    const Node = (value) => {
+      return {
+        value: value,
+        next: null,
+        changeValue(newValue){this.value=newValue},
+      };
     };
 
-  return {
-    head: null,
-    tail: null,
-    length: 0,
-    addHead
-    // size:()=>,
-    // head:()=>,
-    // tail:()=>,
-    // at:(index)=>,
-    // pop:()=>,
-    // find:(value)=>,
-    // toString:()=>
+    const LinkedListFactory = () => {
+      let head= null;
+      let tail= null;
+      let length= 0;
+      // size:()=>,
+      // head:()=>,
+      // tail:()=>,
+      // at:(index)=>,
+      // pop:()=>,
+      // find:(value)=>,
+      // toString:()=>
+      
+      const addHead = (value) => {
+        let newNode = Node(value);
+        console.log(newNode);
+        if (!head) {
+          head = newNode;
+          tail = head;
+        };
+          newNode.next = this.head;
+          this.head = newNode;
+          
+          this.length++;
+          return this;
+      };
+    
+    return {
+      head,
+      tail,
+      length,
+      addHead,
+    }
   };
-};
+    
+    
+    // initiation
+    const myLL = LinkedListFactory();
+    console.log(myLL);
+    myLL.addHead('value1');
+    console.log(myLL);
 
-// initiation
-const myLL = LinkedListFactory();
-myLL.addHead('value1');
 
 
-
-</script>
+  </script>
 </head>
+
 </html>
