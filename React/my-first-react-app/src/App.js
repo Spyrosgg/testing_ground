@@ -5,29 +5,17 @@ import "./App.css";
 class App extends Component {
   constructor(props){
     super(props)
-    this.state = {
-      task: "",
-      tasks: [],
-    };
-  };
-
-  handleChange = (e) => {
-    this.setState({
-      task : e.target.value
-    });
+    this.state = {tasks:[]};
   };
 
   onSubmitTask = (e) => {
-    e.preventDefault();
-    this.setState({
-      tasks: (this.state.task),
-      task: ""
-    });
+    this.setState({this.state.tasks.push()      
+    })
+
   };
 
 
   render() {
-    const { task, tasks } = this.state;
 
     return (
       <>
@@ -38,12 +26,10 @@ class App extends Component {
             <input 
               type="text"
               placeholder="enter your task"
-              onChange={this.handleChange}
-              value={task}
+              
             />
             <button type="submit">add task</button>
           </form>
-            {console.log(tasks)}
         </div>
       </>
     );
