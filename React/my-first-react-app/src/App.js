@@ -1,24 +1,50 @@
 import React, { Component } from "react";
 import "./App.css";
-import Overview from "./components/Overview";
+
 
 class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      task: "",
+      tasks: [],
+    };
+  };
+
+  handleChange = (e) => {
+    this.setState({
+      task : e.target.value
+    });
+  };
+
+  onSubmitTask = (e) => {
+    e.preventDefault();
+    this.setState({
+      tasks: (this.state.task),
+      task: ""
+    });
+  };
+
+
   render() {
+    const { task, tasks } = this.state;
+
     return (
       <>
         <h1>Tasker</h1>
         
         <div className="input">
-          <input 
-            placeholder="input your task" 
-            onChange={()=>{}}
-          />
-          <button type="submit" onClick={()=>{}}>Submit</button>
+          <form onSubmit={this.onSubmitTask}>
+            <input 
+              type="text"
+              placeholder="enter your task"
+              onChange={this.handleChange}
+              value={task}
+            />
+            <button type="submit">add task</button>
+          </form>
+            {console.log(tasks)}
         </div>
-
-
-
-         <Overview task="this is a task sample 1" />
       </>
     );
   }
