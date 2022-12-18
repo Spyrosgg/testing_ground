@@ -5,34 +5,35 @@ import "./App.css";
 class App extends Component {
   constructor(props){
     super(props)
-    this.state = {tasks:[]};
+    this.state = {task:"",
+    tasks:[]};
   };
 
-  onSubmitTask = (e) => {
-    this.setState({this.state.tasks.push()      
-    })
+  handleSubmit=(e)=>{
+    e.preventDefault();
+    this.setState((e)=>{
+      tasks:
+    });
+  }
 
-  };
 
-
-  render() {
-
+ 
+  render(){
     return (
       <>
         <h1>Tasker</h1>
         
         <div className="input">
-          <form onSubmit={this.onSubmitTask}>
+          <form onSubmit={this.handleSubmit}>
             <input 
               type="text"
               placeholder="enter your task"
-              
             />
             <button type="submit">add task</button>
           </form>
         </div>
       </>
-    );
+    )
   }
 }
 
