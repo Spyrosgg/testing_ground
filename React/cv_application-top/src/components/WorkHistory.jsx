@@ -3,7 +3,7 @@ function WorkHisotry(){
     const a2 = {name: "Employer", phld: "e.g. The best one "};
     const b1 = {name: "City", phld: "e.g. Athens"};
     const b2 = {name: "Country", phld: "e.Greece"};
-    const c1 = {name: "Start Date", phld: "Select "};
+    const c1 = {name: "Start Date", phld: "Select"};
     const c2 = {name: "End Date", phld: "Select"};
 
     return (
